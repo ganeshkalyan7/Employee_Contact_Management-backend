@@ -17,8 +17,8 @@ app.use("/contact", contactRouter);
 
 mongo.connect();
 
-app.use("/", (req, res, next) => {
-  res.send("hello from middleware");
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 const PORT = process.env.PORT || 5000;
 
