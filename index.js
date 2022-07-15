@@ -7,7 +7,6 @@ const contactRouter = require("./routers/contactRoutes");
 const authenticate = require("./controllers/authentication");
 const cors = require("cors");
 dotenv.config();
-const PORT = process.env.PORT;
 
 //middlewares
 app.use(express.json());
@@ -21,5 +20,6 @@ mongo.connect();
 app.use("/", (req, res, next) => {
   res.send("hello from middleware");
 });
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`server running on port number ${PORT}`));
