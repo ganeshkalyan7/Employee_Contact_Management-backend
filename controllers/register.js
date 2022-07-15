@@ -33,7 +33,7 @@ exports.login = async (req, res, next) => {
     console.log(existUser);
     //email validation
     if (!existUser) {
-      res.status(500).json({ msg: "email doesnst exist!!!!! please signUp" });
+      res.status(500).json({ msg: "email doesnst exist!!!!! please register" });
     }
     //password validation
     const isValid = await bcrypt.compare(req.body.password, existUser.password);
