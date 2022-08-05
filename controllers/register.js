@@ -7,7 +7,7 @@ exports.signup = async (req, res, next) => {
     //userexists or not
     const existUser = await User.findOne({ email: req.body.email });
     if (existUser) {
-      res.status(500).json({ msg: "user already exist!!!" });
+      res.status(404).json({ msg: "user already exist!!!" });
     }
     //encrypt of password
     const salt = await bcrypt.genSalt(10);
