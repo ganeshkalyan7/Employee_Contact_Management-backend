@@ -10,7 +10,7 @@ exports.authentication = async (req, res, next) => {
       req.headers["access-token"],
       "secret_key"
     );
-    console.log(accessingOperation);
+    // console.log(accessingOperation);
     next();
   } catch (err) {
     res.send(err);
